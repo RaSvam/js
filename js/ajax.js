@@ -1,16 +1,16 @@
 
-$("a.ajax").live("click", function (event) {
+$(document).on("click", "a.ajax", function (event) {
     event.preventDefault();
     $.get(this.href);
 });
 
 /* AJAXové odeslání formulářů */
-$("form.ajax").live("submit", function () {
+$(document).on("submit","form.ajax", function () {
     $(this).ajaxSubmit();
     return false;
 });
 
-$("form.ajax :submit").live("click", function () {
+$(document).on("click", "form.ajax :submit", function () {
     $(this).ajaxSubmit();
     return false;
 });
